@@ -1,0 +1,57 @@
+#!/bin/bash
+
+#Restore the configuration before jolicloud-tweaks in a file: restore-conf file
+#Keep the old value in comment to be able to restore
+
+confFile="$1"
+state=0
+buffer=""
+replaceOld=""
+replaceNew=""
+newConf=""
+oldState=0
+while read LINE ; do
+	if [ "$LINE" == "#jolicloud-tweaks modification:" ]; then
+		state=1
+		buffer="$LINE"
+	elif [ "$state" == "1" ]; then
+		replaceOld=`echo "$LINE" | sed "s/^#old:\s*\\(.*\\)$/\\1/"`
+		if [ "$replaceOld" != "$LINE" ]; then
+			state=2
+		fi
+		buffer="$buffer
+$LINE"
+	elif [ "$state" == "2" ]; then
+		replaceNew=`echo "$LINE" | sed "s/^#new:\s*\\(.*\\)$/\\1/"`
+		if [ "$replaceNew" != "$LINE" ]; then
+			state=3
+		fi
+		buffer="$buffer
+$LINE"
+	elif [ "$state" == "3" ]; then
+		newLine=`echo "$LINE" | sed "s/^$replaceNew$/$replaceOld/"`
+		buffer="$buffer
+$LINE"
+		if [ "$newLine" == "$replaceOld" ]; then
+			newConf="$newConf
+$newLine"
+			state=0
+			buffer=""
+		fi
+	else
+		newConf="$newConf
+$LINE"
+	fi
+	if [ "$state" != "0" ]; then
+		if [ "$state" == "$newState" ]; then
+			newConf="$newConf
+$buffer"
+			buffer=""
+			state=0	
+		fi	
+	fi
+	oldState=$state
+done < $confFile
+echo "$newConf" > $confFile
+
+exit 0

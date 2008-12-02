@@ -1,0 +1,10 @@
+Package: jolicloud-tweaks
+Version: 0.1
+Architecture: all
+Maintainer: Jolicloud developers <developers@jolicloud.org>
+Installed-Size: 188
+Section: unknown
+Priority: extra
+Homepage: http://www.jolicloud.org
+Description: Jolicloud configuration tweaks
+ Scripts that tweak a bit ubuntu to adapt it more to netbooks

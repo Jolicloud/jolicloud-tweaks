@@ -1,0 +1,13 @@
+Source: jolicloud-tweaks
+Section: unknown
+Priority: extra
+Maintainer: Jolicloud developers <developers@jolicloud.org>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.0
+Homepage: http://www.jolicloud.org
+
+Package: jolicloud-tweaks
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Jolicloud configuration tweaks
+ Scripts that tweak a bit ubuntu to adapt it more to netbooks
