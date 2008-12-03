@@ -9,18 +9,30 @@ set -e
 app_dir="/usr/share/jolicloud-tweaks"
 save_dir="$app_dir/save"
 
-#Remove fix for the shutdown problem
-sed -i 's/^rmmod snd-hda-intel #Automatic fix by jolicloud-tweaks$//' /etc/default/halt
-
 # Remove fix for evolution when computer is put on AC
-chmod +x /etc/acpi/mailbtn.sh
+if [ -a /etc/acpi/mailbtn.sh ]; then
+	chmod +x /etc/acpi/mailbtn.sh
+fi
+
+#Remove fix for the shutdown problem
+if [ -a /etc/default/halt ]; then
+	sed -i 's/^rmmod snd-hda-intel #Automatic fix by jolicloud-tweaks$//' /etc/default/halt
+fi
 
 #Restore the GDM theme
-$app_dir/restore-conf /etc/gdm/gdm.conf-custom
+if [ -a /etc/gdm/gdm.conf-custom ]; then
+	$app_dir/restore-conf /etc/gdm/gdm.conf-custom
+fi
 
 #Restaures the netbook-launcher
 if [ -a $save_dir/old-netbook-launcher-ubuntu.png ]; then
 	mv -f $save_dir/old-netbook-launcher-ubuntu.png /usr/share/netbook-launcher/ubuntu.png
+fi
+
+#Restore firefox settings
+if [ -a /etc/firefox-3.0/pref/ubufox.js ]; then
+	newFile=`cat /etc/firefox-3.0/pref/ubufox.js | grep -v " //Added by jolicloud-tweaks$"`
+	echo "$newFile" > /etc/firefox-3.0/pref/ubufox.js
 fi
 
 # dh_installdeb will replace this with shell code automatically
