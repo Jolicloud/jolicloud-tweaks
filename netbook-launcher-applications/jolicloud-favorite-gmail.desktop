@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Google Mail (GMail)
+GenericName=Prism for Google Mail (GMail)
+Exec=prism-google-mail
+Terminal=false
+Type=Application
+Icon=prism-google-mail
+Categories=Favorites
+StartupWMClass=Prism
+StartupNotify=true

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=YouTube
+GenericName=Prism for YouTube
+Exec=prism-youtube
+Terminal=false
+Type=Application
+Icon=prism-youtube
+Categories=Favorites
+StartupWMClass=Prism
+StartupNotify=true

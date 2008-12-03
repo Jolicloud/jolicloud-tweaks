@@ -1,5 +1,6 @@
 autostart/* /etc/xdg/autostart
 gconf/* /usr/share/gconf/defaults/
+netbook-launcher-applications/* /etc/skel/.local/share/applications
 netbook-launcher /usr/share/jolicloud-tweaks
 edit-conf /usr/share/jolicloud-tweaks
 restore-conf /usr/share/jolicloud-tweaks

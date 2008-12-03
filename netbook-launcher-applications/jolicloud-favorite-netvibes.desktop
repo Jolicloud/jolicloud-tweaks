@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Netvibes
+GenericName=Prism for Netvibes
+Exec=prism-netvibes
+Terminal=false
+Type=Application
+Icon=prism-netvibes
+Categories=Favorites
+StartupWMClass=Prism
+StartupNotify=true

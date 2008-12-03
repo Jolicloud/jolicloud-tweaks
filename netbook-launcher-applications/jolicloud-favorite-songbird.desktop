@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Songbird
+GenericName=Songbird
+Comment=Songbird Media Player
+Exec=songbird
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Favorites
+Icon=songbird
