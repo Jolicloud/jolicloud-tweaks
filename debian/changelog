@@ -1,3 +1,15 @@
+jolicloud-tweaks (0.1.2) intrepid; urgency=low
+
+  * Cleaned the applets list
+
+ -- Jolicloud developers <developers@jolicloud.org>  Wed, 10 Dec 2008 13:56:35 +0100
+
+jolicloud-tweaks (0.1.1) intrepid; urgency=low
+
+  * Added the keyboard state applet to default panel
+
+ -- Jolicloud developers <developers@jolicloud.org>  Wed, 10 Dec 2008 11:45:21 +0100
+
 jolicloud-tweaks (0.1) intrepid; urgency=low
 
   * Initial release
