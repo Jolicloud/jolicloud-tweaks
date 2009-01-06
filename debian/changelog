@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.5) intrepid; urgency=low
+
+  * Removed favorites of uninstalled apps in netbook-launcher
+
+ -- Jolicloud developers <developers@jolicloud.org>  Tue, 06 Jan 2009 18:32:54 +0100
+
 jolicloud-tweaks (0.1.4) intrepid; urgency=low
 
   * Hibernate on lid-close fix
