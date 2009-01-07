@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.6) intrepid; urgency=low
+
+  * Really applied changelog 0.1.5
+
+ -- Jolicloud developers <developers@jolicloud.org>  Wed, 07 Jan 2009 10:45:48 +0100
+
 jolicloud-tweaks (0.1.5) intrepid; urgency=low
 
   * Removed favorites of uninstalled apps in netbook-launcher
