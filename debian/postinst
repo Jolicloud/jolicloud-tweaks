@@ -5,7 +5,7 @@
 
 set -e
 
-#Application directories
+# Application directories
 app_dir="/usr/share/jolicloud-tweaks"
 save_dir="$app_dir/save"
 
@@ -14,23 +14,27 @@ if [ -a /etc/acpi/mailbtn.sh ]; then
 	chmod -x /etc/acpi/mailbtn.sh
 fi
 
-#Fix the shutdown problem
+# Fix the shutdown problem
 if [ -a /etc/default/halt ]; then
 	if [ `cat /etc/default/halt | grep -c "rmmod snd-hda-intel #Automatic fix by jolicloud-tweaks"` -eq 0 ]; then
 		echo "\nrmmod snd-hda-intel #Automatic fix by jolicloud-tweaks" >> /etc/default/halt
 	fi
 fi
 
-#Gconf settings
+# Gconf settings
 update-gconf-defaults
 
-#Modifies the netbook-launcher
+# Modify the netbook-launcher
 if [ -d /usr/share/netbook-launcher/ ]; then
+	# ubuntu.png
 	cp -f /usr/share/netbook-launcher/ubuntu.png $save_dir/old-netbook-launcher-ubuntu.png
 	cp -f $app_dir/netbook-launcher/ubuntu.png /usr/share/netbook-launcher/ubuntu.png
+	# window.svg
+	cp -f /usr/share/netbook-launcher/window.svg $save_dir/old-netbook-launcher-window.svg
+	cp -f $app_dir/netbook-launcher/window.svg /usr/share/netbook-launcher/window.svg
 fi
 
-#Change the gdm theme
+# Change the gdm theme
 if [ -d /etc/gdm/ ]; then
 	if [ ! -a /etc/gdm/gdm.conf-custom ]; then
 		touch /etc/gdm/gdm.conf-custom
@@ -40,7 +44,7 @@ if [ -d /etc/gdm/ ]; then
 	$app_dir/edit-conf /etc/gdm/gdm.conf-custom greeter GraphicalTheme Jolicloud
 fi
 
-#Firefox settings
+# Firefox settings
 if [ -a /etc/firefox-3.0/pref/ubufox.js ]; then
 	while read LINE ; do
 		echo "$LINE //Added by jolicloud-tweaks" >> /etc/firefox-3.0/pref/ubufox.js
@@ -53,5 +57,3 @@ fi
 #DEBHELPER#
 
 exit 0
-
-
