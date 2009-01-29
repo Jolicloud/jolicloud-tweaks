@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Encoding=UTF-8
-Name=My Jolicloud
+Name=Get Started
 GenericName=Prism for My Jolicloud
 Exec=prism-jolicloud
 Terminal=false
