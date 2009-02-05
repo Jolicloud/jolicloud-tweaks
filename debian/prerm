@@ -30,6 +30,8 @@ if [ -a $save_dir/old-netbook-launcher-ubuntu.png ]; then
 	mv -f $save_dir/old-netbook-launcher-ubuntu.png /usr/share/netbook-launcher/ubuntu.png
 	# window.svg
 	mv -f $save_dir/old-netbook-launcher-window.svg /usr/share/netbook-launcher/window.svg
+	# iconviewbg.png
+	mv -f $save_dir/old-netbook-launcher-iconviewbg.png /usr/share/netbook-launcher/iconviewbg.png
 fi
 
 # Restore Firefox settings

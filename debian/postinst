@@ -32,6 +32,9 @@ if [ -d /usr/share/netbook-launcher/ ]; then
 	# window.svg
 	cp -f /usr/share/netbook-launcher/window.svg $save_dir/old-netbook-launcher-window.svg
 	cp -f $app_dir/netbook-launcher/window.svg /usr/share/netbook-launcher/window.svg
+	# iconviewbg.png
+	cp -f /usr/share/netbook-launcher/iconviewbg.png $save_dir/old-netbook-launcher-iconviewbg.png
+	cp -f $app_dir/netbook-launcher/iconviewbg.png /usr/share/netbook-launcher/iconviewbg.png
 fi
 
 # Change the gdm theme
