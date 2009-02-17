@@ -1,2 +1,4 @@
 /apps/gnome-power-manager/buttons/lid_battery "suspend"
 /apps/gnome-power-manager/buttons/lid_ac "suspend"
+/apps/gnome-power-manager/backlight/battery_reduce "false"
+/apps/gnome-power-manager/backlight/idle_dim_battery "false"
