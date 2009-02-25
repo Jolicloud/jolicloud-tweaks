@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.9) intrepid; urgency=low
+
+  * Updated the power manager default configuration to fix the "stop responding" issues.
+
+ -- Romain Huet <romain@jolicloud.org>  Wed, 25 Feb 2009 11:06:08 +0100
+
 jolicloud-tweaks (0.1.8) intrepid; urgency=low
 
   * Added a iconviewbg.png custom image and updated window.svg for the netbook launcher
