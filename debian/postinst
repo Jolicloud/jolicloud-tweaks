@@ -24,19 +24,6 @@ fi
 # Gconf settings
 update-gconf-defaults
 
-# Modify the netbook-launcher
-if [ -d /usr/share/netbook-launcher/ ]; then
-	# ubuntu.png
-	cp -f /usr/share/netbook-launcher/ubuntu.png $save_dir/old-netbook-launcher-ubuntu.png
-	cp -f $app_dir/netbook-launcher/ubuntu.png /usr/share/netbook-launcher/ubuntu.png
-	# window.svg
-	cp -f /usr/share/netbook-launcher/window.svg $save_dir/old-netbook-launcher-window.svg
-	cp -f $app_dir/netbook-launcher/window.svg /usr/share/netbook-launcher/window.svg
-	# iconviewbg.png
-	cp -f /usr/share/netbook-launcher/iconviewbg.png $save_dir/old-netbook-launcher-iconviewbg.png
-	cp -f $app_dir/netbook-launcher/iconviewbg.png /usr/share/netbook-launcher/iconviewbg.png
-fi
-
 # Change the gdm theme
 if [ -d /etc/gdm/ ]; then
 	if [ ! -a /etc/gdm/gdm.conf-custom ]; then

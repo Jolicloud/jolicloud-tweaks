@@ -1,3 +1,10 @@
+jolicloud-tweaks (0.1.10) intrepid; urgency=low
+
+  * Removed the artwork from jolicloud-tweaks
+  * Removed the netbook-launcher redesign
+
+ -- Tristan Groléat <tristan@jolicloud.org>  Thu, 26 Feb 2009 11:06:08 +0100
+
 jolicloud-tweaks (0.1.9) intrepid; urgency=low
 
   * Updated the power manager default configuration to fix the "stop responding" issues.

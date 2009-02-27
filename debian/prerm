@@ -24,16 +24,6 @@ if [ -a /etc/gdm/gdm.conf-custom ]; then
 	$app_dir/restore-conf /etc/gdm/gdm.conf-custom
 fi
 
-# Restore the netbook-launcher
-if [ -a $save_dir/old-netbook-launcher-ubuntu.png ]; then
-	# ubuntu.png
-	mv -f $save_dir/old-netbook-launcher-ubuntu.png /usr/share/netbook-launcher/ubuntu.png
-	# window.svg
-	mv -f $save_dir/old-netbook-launcher-window.svg /usr/share/netbook-launcher/window.svg
-	# iconviewbg.png
-	mv -f $save_dir/old-netbook-launcher-iconviewbg.png /usr/share/netbook-launcher/iconviewbg.png
-fi
-
 # Restore Firefox settings
 if [ -a /etc/firefox-3.0/pref/ubufox.js ]; then
 	newFile=`cat /etc/firefox-3.0/pref/ubufox.js | grep -v " //Added by jolicloud-tweaks$"`
