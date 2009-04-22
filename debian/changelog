@@ -1,4 +1,4 @@
-jolicloud-tweaks (0.1.11) robbie; urgency=low
+jolicloud-tweaks (0.1.11) robby; urgency=low
 
   * Removed autostart/netbook-launcher.desktop as its provided by
     netbook-launcher
