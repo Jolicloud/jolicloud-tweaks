@@ -1,0 +1,25 @@
+ <!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+  "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+<Menu>
+	<Name>Desktop</Name>
+	<Menu>
+		<Name>Simple Administration</Name>
+    		<Directory>Settings-System.directory</Directory>
+		<Include>
+			<And>
+				<Category>Settings</Category>
+				<Category>System</Category>
+				<Not>
+					<Filename>synaptic.desktop</Filename>
+					<Filename>update-manager.desktop</Filename>
+					<Filename>software-properties.desktop</Filename>
+					<Filename>polkit-gnome-authorization.desktop</Filename>
+				</Not>
+			</And>
+		</Include>
+	</Menu>
+	<Menu>
+		<Name>Administration</Name>
+    		<Deleted />
+	</Menu>
+</Menu>

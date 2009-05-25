@@ -5,3 +5,4 @@ jolicloud-firefox.js /etc/firefox-3.0/pref
 jolicloud-firefox.properties /usr/share/jolicloud-tweaks
 edit-conf /usr/share/jolicloud-tweaks
 restore-conf /usr/share/jolicloud-tweaks
+menus/* /etc/xdg/menus
