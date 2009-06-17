@@ -35,10 +35,16 @@ if [ -d /etc/gdm/ ]; then
 fi
 
 # Firefox settings
-if [ -a /etc/firefox-3.0/pref/ubufox.js ]; then
+if [ -e /etc/firefox-3.0/pref/ubufox.js ]; then
 	while read LINE ; do
 		echo "$LINE //Added by jolicloud-tweaks" >> /etc/firefox-3.0/pref/ubufox.js
 	done < /etc/firefox-3.0/pref/jolicloud-firefox.js
+fi
+
+# Ubiquity icon
+if [ -e /usr/share/pixmaps/ubiquity.png ]; then
+	cp -f /usr/share/pixmaps/ubiquity.png /usr/share/jolicloud-tweaks/ubiquity.png.old
+	cp -f /usr/share/jolicloud-tweaks/ubiquity.png /usr/share/pixmaps/ubiquity.png
 fi
 
 # dh_installdeb will replace this with shell code automatically

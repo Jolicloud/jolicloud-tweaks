@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.14) robby; urgency=low
+
+  * Added the Ubiquity pixmap change
+
+ -- Tristan Groléat <tristan@jolicloud.org>  Wed, 17 Jun 2009 21:31:36 +0200
+
 jolicloud-tweaks (0.1.13) robby; urgency=low
 
   * Hidden software properties and authorizations icons from the menu
