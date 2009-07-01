@@ -3,7 +3,7 @@
 <Menu>
 	<Name>Desktop</Name>
 	<Menu>
-		<Name>Simple Administration</Name>
+		<Name>SimpleAdministration</Name>
     		<Directory>Settings-System.directory</Directory>
 		<Include>
 			<And>

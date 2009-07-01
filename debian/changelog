@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.16) robby; urgency=low
+
+  * Removed the space in the simplified admin menu name
+
+ -- Tristan Groléat <tristan@jolicloud.org>  Wed, 01 Jul 2009 13:29:15 +0200
+
 jolicloud-tweaks (0.1.15) robby; urgency=low
 
   * Added a fix for corrupted sources.list
