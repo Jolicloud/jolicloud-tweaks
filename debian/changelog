@@ -1,3 +1,12 @@
+jolicloud-tweaks (0.1.17) robby; urgency=low
+
+  * Firefox tweaks
+  * New default applet: cpufreq
+  * Applets are locked by default
+  * Automatically back out /apps/panel gconf user customization
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Mon, 03 Aug 2009 20:13:49 +0200
+
 jolicloud-tweaks (0.1.16) robby; urgency=low
 
   * Removed the space in the simplified admin menu name
