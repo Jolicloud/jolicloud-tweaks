@@ -1,8 +1,13 @@
 jolicloud-tweaks (0.1.18) robby; urgency=low
 
-  * Adjusted the Firefox property 'browser.sessionstore.interval' to 2 min.
+  [ Romain Huet ]
+  * Adjusted the Firefox property 'browser.sessionstore.interval' to 2
+    min.
 
- -- Romain Huet <romain@jolicloud.org>  Thu, 10 Sep 2009 10:56:30 +0200
+  [ Adam McDaniel ]
+  * Set package section to "jolicloud/misc"
+
+ -- Adam McDaniel <adam@jolicloud.org>  Thu, 10 Sep 2009 12:11:01 +0200
 
 jolicloud-tweaks (0.1.17) robby; urgency=low
 
