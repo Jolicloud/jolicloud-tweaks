@@ -15,3 +15,4 @@ pref("general.smoothScroll", true);
 pref("general.autoScroll", true);
 pref("toolkit.storage.synchronous", 0);
 pref("browser.cache.memory.capacity", 16384);
+pref("browser.sessionstore.interval", 120000);
