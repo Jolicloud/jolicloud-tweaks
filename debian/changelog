@@ -1,3 +1,14 @@
+jolicloud-tweaks (0.1.19) robby; urgency=low
+
+  [ Adam McDaniel ]
+  * Cleaning temporary build files
+
+  [ Benjamin Ryzman ]
+  * Add jolicloud tweaks to Firefox 3.5
+  * Add Prism tweaks
+
+ -- Benjamin Ryzman <zarkdav@marvin>  Fri, 18 Sep 2009 13:46:21 +0200
+
 jolicloud-tweaks (0.1.18) robby; urgency=low
 
   [ Romain Huet ]
