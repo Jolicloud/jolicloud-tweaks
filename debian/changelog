@@ -1,3 +1,10 @@
+jolicloud-tweaks (0.1.20) robby; urgency=low
+
+  * Removed the 'rmmod snd-hda-intel' shutdown hack installed by
+    jolicloud-tweaks
+
+ -- Adam McDaniel <adam@jolicloud.org>  Mon, 16 Nov 2009 10:34:03 -0700
+
 jolicloud-tweaks (0.1.19) robby; urgency=low
 
   [ Adam McDaniel ]
