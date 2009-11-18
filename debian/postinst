@@ -18,7 +18,7 @@ fi
 # The previous fix was not implemented correctly, resulting in an overly
 # verbose shutdown which sometimes left the system hanging.
 if [ -a /etc/default/halt ]; then
-	if [ `cat /etc/default/halt | grep -c "#Automatic fix by jolicloud-tweaks"` -eq 0 ]; then
+	if [ `cat /etc/default/halt | grep -c "#Automatic fix by jolicloud-tweaks"` -ne 0 ]; then
 		sed -i 's/^.*#Automatic fix by jolicloud-tweaks$//' /etc/default/halt
 	fi
 fi
