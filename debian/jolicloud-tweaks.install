@@ -1,11 +1,6 @@
-autostart/* /etc/xdg/autostart
 gconf/* /usr/share/gconf/defaults/
-netbook-launcher-applications/* /etc/skel/.local/share/applications
-jolicloud-firefox-3.0.js /etc/firefox-3.0/pref
-jolicloud-firefox-3.5.js /etc/firefox-3.5/pref
-jolicloud-prism.js /etc/prism/pref
+etc/* /etc
 jolicloud-firefox.properties /usr/share/jolicloud-tweaks
 edit-conf /usr/share/jolicloud-tweaks
 restore-conf /usr/share/jolicloud-tweaks
-menus/* /etc/xdg/menus
 ubiquity.png /usr/share/jolicloud-tweaks
