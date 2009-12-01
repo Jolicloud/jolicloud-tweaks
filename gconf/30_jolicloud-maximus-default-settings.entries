@@ -1,0 +1,15 @@
+<gconfentryfile>
+    <entrylist base="/apps/maximus">
+        <entry>
+            <key>exclude_class</key>
+            <schema_key>/schemas/apps/maximus/exclude_class</schema_key>
+            <value>
+                <list type="string">
+                    <value>
+                        <string>vlc</string>
+                    </value>
+                </list>
+            </value>
+        </entry>
+    </entrylist>
+</gconfentryfile>
