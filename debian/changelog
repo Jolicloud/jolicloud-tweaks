@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.22) robby; urgency=low
+
+  * set maximus to not maximize vlc (works for vlc >=1.0 only!)
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Thu, 03 Dec 2009 10:57:44 +0100
+
 jolicloud-tweaks (0.1.21) robby; urgency=low
 
   * Fixed install script; wasn't removing outdated 'shutdown fix' on
