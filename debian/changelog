@@ -1,3 +1,13 @@
+jolicloud-tweaks (0.1.23) robby; urgency=low
+
+  [ Adam McDaniel ]
+  * Set the default panel_main_menu keybinding to Super_L
+
+  [ Romain Huet ]
+  * Updated the Firefox favorite icon
+
+ -- Romain Huet <romain@jolicloud.org>  Mon, 07 Dec 2009 20:08:53 +0100
+
 jolicloud-tweaks (0.1.22) robby; urgency=low
 
   * set maximus to not maximize vlc (works for vlc >=1.0 only!)
