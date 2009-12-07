@@ -65,6 +65,14 @@ if [ -e /usr/share/pixmaps/ubiquity.png ]; then
 	cp -f /usr/share/jolicloud-tweaks/ubiquity.png /usr/share/pixmaps/ubiquity.png
 fi
 
+# Updated local icons from the skel
+for file in /etc/skel/.local/share/applications/*.desktop; do
+	[ -e $file ] || break;
+	for homedir in /home/*; do
+		cp -a $file $homedir/.local/share/applications
+	done
+done
+
 # Fix for the wrong repositories in a distributed IMG
 sed -i 's/robby/jaunty/g' /etc/apt/sources.list
 
