@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.24) robby; urgency=low
+
+  * Fixed postinst copy logic to locate /home/<user>/.local
+
+ -- Adam McDaniel <adam@jolicloud.org>  Mon, 07 Dec 2009 20:40:05 +0100
+
 jolicloud-tweaks (0.1.23) robby; urgency=low
 
   [ Adam McDaniel ]
