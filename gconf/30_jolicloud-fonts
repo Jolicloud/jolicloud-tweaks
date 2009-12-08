@@ -1,0 +1,66 @@
+<gconfentryfile>
+    <entrylist base="/desktop/gnome/interface">
+        <entry>
+            <key>document_font_name</key>
+            <schema_key>/schemas/desktop/gnome/interface/document_font_name</schema_key>
+            <value>
+                <string>Liberation Sans 9</string>
+            </value>
+        </entry>
+        <entry>
+            <key>font_name</key>
+            <schema_key>/schemas/desktop/gnome/interface/font_name</schema_key>
+            <value>
+                <string>Liberation Sans 9</string>
+            </value>
+        </entry>
+        <entry>
+            <key>monospace_font_name</key>
+            <schema_key>/schemas/desktop/gnome/interface/monospace_font_name</schema_key>
+            <value>
+                <string>Liberation Mono 9</string>
+            </value>
+        </entry>
+    </entrylist>
+    <entrylist base="/apps/metacity/general">
+        <entry>
+            <key>titlebar_font</key>
+            <schema_key>/schemas/apps/metacity/general/titlebar_font</schema_key>
+            <value>
+                <string>Liberation Sans 9</string>
+            </value>
+        </entry>
+    </entrylist>
+    <entrylist base="/apps/nautilus/preferences">
+        <entry>
+            <key>desktop_font</key>
+            <schema_key>/schemas/apps/nautilus/preferences/desktop_font</schema_key>
+            <value>
+                <string>Liberation Sans 9</string>
+            </value>
+        </entry>
+    </entrylist>
+    <entrylist base="/desktop/gnome/font_rendering">
+        <entry>
+            <key>antialiasing</key>
+            <schema_key>/schemas/desktop/gnome/font_rendering/antialiasing</schema_key>
+            <value>
+                <string>rgba</string>
+            </value>
+        </entry>
+        <entry>
+            <key>dpi</key>
+            <schema_key>/schemas/desktop/gnome/font_rendering/dpi</schema_key>
+            <value>
+                <int>96</int>
+            </value>
+        </entry>
+        <entry>
+            <key>hinting</key>
+            <schema_key>/schemas/desktop/gnome/font_rendering/hinting</schema_key>
+            <value>
+                <string>slight</string>
+            </value>
+        </entry>
+    </entrylist>
+</gconfentryfile>
