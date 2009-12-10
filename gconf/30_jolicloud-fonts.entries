@@ -52,7 +52,7 @@
             <key>dpi</key>
             <schema_key>/schemas/desktop/gnome/font_rendering/dpi</schema_key>
             <value>
-                <float>120</float>
+                <float>96</float>
             </value>
         </entry>
         <entry>
