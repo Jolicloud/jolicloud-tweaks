@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.26) robby; urgency=low
+
+  * DPI set to 96
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Thu, 10 Dec 2009 11:21:06 +0100
+
 jolicloud-tweaks (0.1.25) robby; urgency=low
 
   * Add font spec
