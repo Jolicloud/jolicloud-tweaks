@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.30) robby; urgency=low
+
+  * Fix typos in previous commit
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Tue, 02 Mar 2010 19:32:28 +0100
+
 jolicloud-tweaks (0.1.29) robby; urgency=low
 
   * Remove maximus.autostart upon package installation if found
