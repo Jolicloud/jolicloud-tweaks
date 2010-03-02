@@ -1,8 +1,14 @@
-jolicloud-tweaks (0.1.27) robby; urgency=low
+jolicloud-tweaks (0.1.28) robby; urgency=low
 
   * remove Maximus autostart as it is already set by the maximus package
 
- -- Benjamin Ryzman <benjamin@jolicloud.org>  Tue, 02 Mar 2010 18:49:04 +0100
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Tue, 02 Mar 2010 19:02:20 +0100
+
+jolicloud-tweaks (0.1.27) robby; urgency=low
+
+  * Add specific version to firefox dependency
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Mon, 11 Jan 2010 13:21:46 +0100
 
 jolicloud-tweaks (0.1.26) robby; urgency=low
 
