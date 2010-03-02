@@ -76,6 +76,13 @@ for file in /etc/skel/.local/share/applications/*.desktop; do
 	done
 done
 
+# Remove earlier maximus autostart which is not useful anymore
+maximus_autostart="/etc/xdg/autostart/maximus.desktop.dpkg-obsolete"
+if [ -e "$maximus_autostart" ]; then
+    echo "Removing obsolet conffile $maximus_autostart"
+    rm -f "$maximus_autostart".dpkg-obsolete
+fi
+
 # Fix for the wrong repositories in a distributed IMG
 sed -i 's/robby/jaunty/g' /etc/apt/sources.list
 

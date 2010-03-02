@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+# Prepare to remove earlier maximus autostart which is not useful anymore
+maximus_autostart="/etc/xdg/autostart/maximus.desktop.dpkg-obsolete"
+if [ -e "$maximus_autostart" ]; then
+    mv -f "$maximus_autostart" "$maximus_autostart".dpkg-obsolete
+fi
+
+#DEBHELPER#
+
+exit 0
