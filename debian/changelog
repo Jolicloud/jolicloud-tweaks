@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.31) robby; urgency=low
+
+  * Added a default keyring to /etc/skel
+
+ -- Adam McDaniel <adam@jolicloud.org>  Sun, 07 Mar 2010 10:52:22 -0700
+
 jolicloud-tweaks (0.1.30) robby; urgency=low
 
   * Fix typos in previous commit
