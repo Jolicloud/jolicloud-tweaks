@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.32) robby; urgency=low
+
+  * Makeing jolicloud-tweaks play nice with Firefox 3.6
+
+ -- Andrew Stormont <andy@jolicloud.org>  Fri, 26 Mar 2010 18:13:40 +0100
+
 jolicloud-tweaks (0.1.31) robby; urgency=low
 
   * Added a default keyring to /etc/skel
