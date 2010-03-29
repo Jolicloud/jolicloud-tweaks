@@ -8,6 +8,7 @@ Homepage: http://www.jolicloud.org
 
 Package: jolicloud-tweaks
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, firefox (>=3.5.7+nobinonly-1jolicloud1), netbook-launcher, gdm
+Depends: ${shlibs:Depends}, ${misc:Depends}, netbook-launcher, gdm
+Suggests: firefox
 Description: Jolicloud configuration tweaks
  Scripts that tweak a bit Ubuntu to adapt it more to netbooks and to Jolicloud
