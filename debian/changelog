@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.33) robby; urgency=low
+
+  * Suggest firefox but don't depend on it
+
+ -- Andrew Stormont <andy@jolicloud.org>  Mon, 29 Mar 2010 12:20:31 +0200
+
 jolicloud-tweaks (0.1.32) robby; urgency=low
 
   * Makeing jolicloud-tweaks play nice with Firefox 3.6
