@@ -1,0 +1,69 @@
+#!/bin/sh
+
+#
+# Support functions for jolicloud-user-tweaks
+# 
+
+AddBookmark ()
+{
+    BOOKMARKS=~/.gtk-bookmarks
+
+    if [ ! -d $1 ]; then
+        return 1
+    fi
+
+    if [ ! -f $BOOKMARKS ]; then
+	touch $BOOKMARKS
+    fi
+
+    if [ `grep -c $1 $BOOKMARKS` -eq 0 ]; then
+        echo -n "file://$1" >> $BOOKMARKS
+        if [ "x$2" != "x" ]; then
+            echo -n " $2" >> $BOOKMARKS
+        fi
+        echo >> $BOOKMARKS
+    fi
+
+    return 0
+}
+
+
+#
+# User Tweak #1
+#
+# Set up default bookmarks for Nautilus, prior to the execution of
+# xdg-user-dirs-gtk-update at startup.
+#
+# While this may seen redundant, there's a weird use-case that requires this
+# tweak. Basically, if a new user is created and they go to login, no
+# .gtk-bookmarks file will exist. When the gnome-session runs
+# jolicloud-user-tweaks, it adds in the "Host OS" as designed. But, when
+# xdg-user-dirs runs, it will not populate "Documents" "Music" "Pictures",
+# or "Videos" on its own.
+#
+# Since its way too complicated to extend xdg-user-dirs to handle Tweak #2,
+# Tweak #1 acts as a contingency to pre-populate the .gtk-bookmarks file so
+# xdg-user-dirs-gtk-updates can still do its job: set common user
+# directories and bookmarks as properly localized directory names.
+#
+
+AddBookmark $HOME/Documents
+AddBookmark $HOME/Music
+AddBookmark $HOME/Pictures
+AddBookmark $HOME/Videos
+
+
+#
+# User Tweak #2
+#
+# Add a "Host OS" bookmark into Nautilus, but only for Jolicloud Express
+# installations that have a /host mount.
+#
+
+if `grep -q /host /proc/mounts`; then
+    AddBookmark /host "Host OS"
+fi
+
+
+
+exit 0
