@@ -1,3 +1,11 @@
+jolicloud-tweaks (0.1.31.1) robby; urgency=low
+
+  * Created new jolicloud-user-tweaks script to run as user at Gnome
+    startup.  Currently, this script handle's a special tweak to create
+    "Host OS" bookmark for nautilus on Jolicloud Express installs
+
+ -- Adam McDaniel <adam@jolicloud.org>  Mon, 29 Mar 2010 23:56:19 -0600
+
 jolicloud-tweaks (0.1.31) robby; urgency=low
 
   * Added a default keyring to /etc/skel
