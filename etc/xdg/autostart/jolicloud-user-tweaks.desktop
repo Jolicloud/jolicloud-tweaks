@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Jolicloud User Tweaks
+Comment=Jolicloud-specific User Tweaks for Gnome
+Icon=jolicloud-daemon
+Exec=jolicloud-user-tweaks
+Terminal=false
+Type=Application
+Categories=
+NoDisplay=True
+OnlyShowIn=GNOME;
+X-GNOME-Autostart-Phase=Desktop
+X-GNOME-Autostart-Notify=false

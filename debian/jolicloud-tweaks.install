@@ -1,5 +1,6 @@
+etc
+usr
 gconf/* /usr/share/gconf/defaults/
-etc/* /etc
 jolicloud-firefox.properties /usr/share/jolicloud-tweaks
 edit-conf /usr/share/jolicloud-tweaks
 restore-conf /usr/share/jolicloud-tweaks
