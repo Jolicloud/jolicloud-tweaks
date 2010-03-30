@@ -56,12 +56,12 @@ AddBookmark $HOME/Videos
 #
 # User Tweak #2
 #
-# Add a "Host OS" bookmark into Nautilus, but only for Jolicloud Express
+# Add a "Windows" bookmark into Nautilus, but only for Jolicloud Express
 # installations that have a /host mount.
 #
 
 if `grep -q /host /proc/mounts`; then
-    AddBookmark /host "Host OS"
+    AddBookmark /host "Windows"
 fi
 
 
