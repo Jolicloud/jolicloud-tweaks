@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.31.2) robby; urgency=low
+
+  * Changed "Host OS" bookmark to "Windows"
+
+ -- Adam McDaniel <adam@jolicloud.org>  Tue, 30 Mar 2010 11:45:39 -0600
+
 jolicloud-tweaks (0.1.31.1) robby; urgency=low
 
   * Created new jolicloud-user-tweaks script to run as user at Gnome
