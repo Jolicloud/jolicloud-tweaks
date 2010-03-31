@@ -1,3 +1,9 @@
+jolicloud-tweaks (0.1.34) robby; urgency=low
+
+  * Add conflicts with ubufox
+
+ -- Andrew Stormont <andy@jolicloud.org>  Wed, 31 Mar 2010 13:33:23 +0200
+
 jolicloud-tweaks (0.1.33) robby; urgency=low
 
   * Suggest firefox but don't depend on it
