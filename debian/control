@@ -10,5 +10,6 @@ Package: jolicloud-tweaks
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, netbook-launcher, gdm
 Suggests: firefox
+Conflicts: ubufox
 Description: Jolicloud configuration tweaks
  Scripts that tweak a bit Ubuntu to adapt it more to netbooks and to Jolicloud
