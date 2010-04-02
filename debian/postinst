@@ -60,6 +60,13 @@ if [ -e /etc/firefox-3.0/pref/ubufox.js -a \
 	done < /etc/firefox-3.0/pref/jolicloud-firefox.js
 fi
 
+# Change all jolicloud-favorite-firefox.desktop files to use firefox.png and not firefox-3.5.png.
+for item in `echo /home/*/.local/share/applications/jolicloud-favorite-firefox.desktop`; do
+	if grep -q firefox-3.5 $item 2> /dev/null; then 
+		sed -i s/firefox-3.5/firefox/ $item;
+	fi
+done
+
 # Ubiquity icon
 if [ -e /usr/share/pixmaps/ubiquity.png ]; then
 	cp -f /usr/share/pixmaps/ubiquity.png /usr/share/jolicloud-tweaks/ubiquity.png.old
