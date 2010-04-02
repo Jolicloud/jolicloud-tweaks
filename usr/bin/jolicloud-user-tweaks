@@ -61,7 +61,7 @@ AddBookmark $HOME/Videos
 #
 
 if `grep -q /host /proc/mounts`; then
-    AddBookmark /host "Host OS"
+    AddBookmark /host "Windows"
 fi
 
 
