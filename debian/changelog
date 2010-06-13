@@ -1,3 +1,12 @@
+jolicloud-tweaks (1.0.0~dev1) robby-dev; urgency=low
+
+  * Configure jolicloud-user-tweaks to run earlier in the gnome-session
+    startup
+  * Disable the nautilus desktop, otherwise it may appear overtop of
+    nickel given whichever desktop gnome-session decides to load first.
+
+ -- Adam McDaniel <adam@jolicloud.org>  Sun, 13 Jun 2010 21:19:47 +0200
+
 jolicloud-tweaks (0.2.0) robby; urgency=low
 
   * Change dependency on netbook-launcher to a suggestion; add
