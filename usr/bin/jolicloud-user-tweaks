@@ -66,4 +66,20 @@ fi
 
 
 
+#
+# User Tweak #3
+#
+# Configure Nautilus to not display on the desktop if jolicloud-launcher is
+# installed. Normally, Nautilus controls the desktop, but we want our
+# HTML5 launcher to be the only entity. Because of the timing of things,
+# there is a chance that nautilus will appear overtop of nickel-browser,
+# thus resulting in nothing being available! 
+#
+# Set the no-desktop preference option on startup.
+#
+
+gconftool -s /apps/nautilus/preferences/show_desktop --type bool false
+
+
+
 exit 0
