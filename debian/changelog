@@ -1,3 +1,10 @@
+jolicloud-tweaks (0.2.0) robby; urgency=low
+
+  * Change dependency on netbook-launcher to a suggestion; add
+    jolicloud-launcher suggestion
+
+ -- Adam McDaniel <adam@jolicloud.org>  Sun, 13 Jun 2010 12:05:03 +0200
+
 jolicloud-tweaks (0.1.36) robby; urgency=low
 
   * Moving from firefox-3.5.png to firefox.png - hopefully no more icon
