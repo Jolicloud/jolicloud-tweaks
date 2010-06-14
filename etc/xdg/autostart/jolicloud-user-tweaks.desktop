@@ -9,5 +9,5 @@ Type=Application
 Categories=
 NoDisplay=True
 OnlyShowIn=GNOME;
-X-GNOME-Autostart-Phase=Desktop
+X-GNOME-Autostart-Phase=WindowManager
 X-GNOME-Autostart-Notify=false
