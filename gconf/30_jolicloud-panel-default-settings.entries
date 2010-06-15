@@ -277,7 +277,7 @@
       <key>applets/notification_area/position</key>
       <schema_key>/schemas/apps/panel/objects/position</schema_key>
       <value>
-        <int>140</int>
+        <int>106</int>
       </value>
     </entry>
     <entry>
@@ -375,7 +375,7 @@
       <key>applets/clock/position</key>
       <schema_key>/schemas/apps/panel/objects/position</schema_key>
       <value>
-        <int>68</int>
+        <int>54</int>
       </value>
     </entry>
     <entry>
@@ -621,7 +621,7 @@
       <key>applets/mixer/position</key>
       <schema_key>/schemas/apps/panel/objects/position</schema_key>
       <value>
-        <int>92</int>
+        <int>72</int>
       </value>
     </entry>
     <entry>
