@@ -1,3 +1,10 @@
+jolicloud-tweaks (1.0.0~dev3) robby-dev; urgency=low
+
+  * more compact applet layout
+  * revert: Automatically back out /apps/panel gconf user customization
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Tue, 15 Jun 2010 20:11:51 +0200
+
 jolicloud-tweaks (1.0.0~dev2) robby-dev; urgency=low
 
   * Remove cpufreq and keyboard_state default applets
