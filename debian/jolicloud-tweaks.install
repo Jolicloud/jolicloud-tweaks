@@ -1,6 +1,10 @@
 etc
 usr
-gconf/* /usr/share/gconf/defaults/
+gconf/30_jolicloud-fonts.entries /usr/share/gconf/defaults/
+gconf/30_jolicloud-gnome-power-manager /usr/share/gconf/defaults/
+gconf/30_jolicloud-maximus-default-settings.entries /usr/share/gconf/defaults/
+gconf/30_jolicloud-panel-default-settings.entries /usr/share/gconf/defaults/
+gconf/30_jolicloud-panel-keybindings.entries /usr/share/gconf/defaults/
 jolicloud-firefox.properties /usr/share/jolicloud-tweaks
 edit-conf /usr/share/jolicloud-tweaks
 restore-conf /usr/share/jolicloud-tweaks

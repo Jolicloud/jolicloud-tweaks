@@ -2,7 +2,7 @@ Source: jolicloud-tweaks
 Section: jolicloud/misc
 Priority: extra
 Maintainer: Jolicloud developers <developers@jolicloud.org>
-Build-Depends: debhelper (>= 7), cdbs
+Build-Depends: cdbs, debhelper, config-package-dev
 Standards-Version: 3.8.0
 Homepage: http://www.jolicloud.org
 
@@ -13,3 +13,12 @@ Suggests: firefox, jolicloud-launcher | netbook-launcher
 Conflicts: ubufox
 Description: Jolicloud configuration tweaks
  Scripts that tweak a bit Ubuntu to adapt it more to netbooks and to Jolicloud
+
+Package: jolicloud-legacy-tweaks
+Architecture: all
+Provides: ${diverted-files}
+Conflicts: ${diverted-files}
+Depends: ${shlibs:Depends}, ${misc:Depends}, gdm, jolicloud-tweaks
+Description: Jolicloud configuration tweaks with additional applets
+ Jolicloud configuration to add CPUFreq & KeyState applets to existing users
+ Note: this will reset every user gconf /apps/panel setup
