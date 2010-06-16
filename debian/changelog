@@ -1,3 +1,11 @@
+jolicloud-tweaks (1.0.0~dev4) robby-dev; urgency=low
+
+  * use CDBS
+  * Add new package to install CPUFreq and KeyLock applets for all users
+    (including existing)
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Wed, 16 Jun 2010 17:28:33 +0200
+
 jolicloud-tweaks (1.0.0~dev3) robby-dev; urgency=low
 
   * more compact applet layout
