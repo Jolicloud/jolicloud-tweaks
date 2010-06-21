@@ -1,3 +1,9 @@
+jolicloud-tweaks (1.0.0~dev5) robby; urgency=low
+
+  * Automatically remove applets when one remove jolicloud-legacy-tweaks
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Mon, 21 Jun 2010 17:26:42 +0200
+
 jolicloud-tweaks (1.0.0~dev4) robby-dev; urgency=low
 
   * use CDBS
