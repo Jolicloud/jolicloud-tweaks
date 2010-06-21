@@ -5,6 +5,22 @@
 
 set -e
 
+# Force update of top panel setting by backing out any user customization
+old_ifs=$IFS
+IFS='
+'
+hdirs=$(awk -F: '{if ( $3 >= 1000 && $1 != "nobody" ) print $6}' < /etc/passwd)
+for d in $hdirs; do
+ if [ -d "$d/.gconf/apps/panel" ] ; then
+ backuproot="$d/.gconf-backups"
+ if [ ! -d $backuproot ] ; then
+ mkdir $backuproot
+ fi
+ backupdir=$(mktemp -d "$backuproot/apps.XXXXXXXXXX")
+ mv "$d/.gconf/apps/panel" "$backupdir"
+ fi
+done
+
 #Gconf settings
 update-gconf-defaults
 
