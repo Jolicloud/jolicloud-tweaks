@@ -1,7 +1,7 @@
 <gconfentryfile>
   <entrylist base="/apps/metacity/global_keybindings">
     <entry>
-      <key>panel_main_menu</key>
+      <key>show_desktop</key>
       <value>
         <string>Super_L</string>
       </value>
