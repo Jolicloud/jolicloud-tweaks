@@ -1,3 +1,9 @@
+jolicloud-tweaks (1.0.0~dev6) robby; urgency=low
+
+  * Set the "show_desktop" key as Super_L
+
+ -- Adam McDaniel <adam@jolicloud.org>  Mon, 28 Jun 2010 18:06:45 -0600
+
 jolicloud-tweaks (1.0.0~dev5) robby; urgency=low
 
   * Automatically remove applets when one remove jolicloud-legacy-tweaks
