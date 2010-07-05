@@ -1,44 +1,30 @@
-jolicloud-tweaks (1.0.0~dev6) robby; urgency=low
+jolicloud-tweaks (1.0.0) robby; urgency=low
 
-  * Set the "show_desktop" key as Super_L
-
- -- Adam McDaniel <adam@jolicloud.org>  Mon, 28 Jun 2010 18:06:45 -0600
-
-jolicloud-tweaks (1.0.0~dev5) robby; urgency=low
-
-  * Automatically remove applets when one remove jolicloud-legacy-tweaks
-
- -- Benjamin Ryzman <benjamin@jolicloud.org>  Mon, 21 Jun 2010 17:26:42 +0200
-
-jolicloud-tweaks (1.0.0~dev4) robby-dev; urgency=low
-
+  [ Benjamin Ryzman ]
+  * Remove cpufreq and keyboard_state default applets
+  * fix applets offset
+  * more compact applet layout
+  * revert: Automatically back out /apps/panel gconf user customization
   * use CDBS
   * Add new package to install CPUFreq and KeyLock applets for all users
     (including existing)
+  * Fix update-gconf-defaults not called by jolicloud-legacy-tweaks
+    postinst
+  * Automatically remove applets when one remove jolicloud-legacy-tweaks
 
- -- Benjamin Ryzman <benjamin@jolicloud.org>  Wed, 16 Jun 2010 17:28:33 +0200
-
-jolicloud-tweaks (1.0.0~dev3) robby-dev; urgency=low
-
-  * more compact applet layout
-  * revert: Automatically back out /apps/panel gconf user customization
-
- -- Benjamin Ryzman <benjamin@jolicloud.org>  Tue, 15 Jun 2010 20:11:51 +0200
-
-jolicloud-tweaks (1.0.0~dev2) robby-dev; urgency=low
-
-  * Remove cpufreq and keyboard_state default applets
-
- -- Benjamin Ryzman <benjamin@jolicloud.org>  Fri, 16 Apr 2010 19:30:35 +0200
-
-jolicloud-tweaks (1.0.0~dev1) robby-dev; urgency=low
-
+  [ Adam McDaniel ]
   * Configure jolicloud-user-tweaks to run earlier in the gnome-session
     startup
   * Disable the nautilus desktop, otherwise it may appear overtop of
     nickel given whichever desktop gnome-session decides to load first.
+  * Set the "show_desktop" key as Super_L
+  * Add new keybindings... panel_main_menu: Menu, run_command_terminal:
+    Alt-F1
+  * When upgrading jolicloud-tweaks (1.0.0), re-apply the (new) default
+    keybinding rules for all users.
+  * Confirm that /home/*/.gconf is a directory before running gconftool.
 
- -- Adam McDaniel <adam@jolicloud.org>  Sun, 13 Jun 2010 21:19:47 +0200
+ -- Adam McDaniel <adam@jolicloud.org>  Mon, 05 Jul 2010 15:18:46 -0600
 
 jolicloud-tweaks (0.2.0) robby; urgency=low
 
