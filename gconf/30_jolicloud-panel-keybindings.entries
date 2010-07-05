@@ -9,7 +9,7 @@
     <entry>
       <key>panel_main_menu</key>
       <value>
-        <string>Menu</string>
+        <string>&lt;Control&gt;Escape</string>
       </value>
     </entry>
     <entry>
