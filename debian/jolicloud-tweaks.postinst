@@ -36,36 +36,11 @@ if [ -d /etc/gdm/ ]; then
 	$app_dir/edit-conf /etc/gdm/gdm.conf-custom greeter GraphicalTheme Jolicloud
 fi
 
-# Firefox settings
-if [ -e /etc/firefox-3.0/pref/ubufox.js -a \
-     -e /etc/firefox-3.0/pref/jolicloud-firefox.js ]; then
-	while read LINE ; do
-		echo "$LINE //Added by jolicloud-tweaks" >> /etc/firefox-3.0/pref/ubufox.js
-	done < /etc/firefox-3.0/pref/jolicloud-firefox.js
-fi
-
-# Change all jolicloud-favorite-firefox.desktop files to use firefox.png and not firefox-3.5.png.
-for item in `echo /home/*/.local/share/applications/jolicloud-favorite-firefox.desktop`; do
-	if grep -q firefox-3.5 $item 2> /dev/null; then 
-		sed -i s/firefox-3.5/firefox/ $item;
-	fi
-done
-
 # Ubiquity icon
 if [ -e /usr/share/pixmaps/ubiquity.png ]; then
 	cp -f /usr/share/pixmaps/ubiquity.png /usr/share/jolicloud-tweaks/ubiquity.png.old
 	cp -f /usr/share/jolicloud-tweaks/ubiquity.png /usr/share/pixmaps/ubiquity.png
 fi
-
-# Updated local icons from the skel
-for file in /etc/skel/.local/share/applications/*.desktop; do
-	[ -e $file ] || break;
-	for userLocalDir in /home/*/.local; do
-		[ -d $userLocalDir ] || break;
-		mkdir -p $userLocalDir/share/applications
-		cp -a $file $userLocalDir/share/applications
-	done
-done
 
 # Remove earlier maximus autostart which is not useful anymore
 maximus_autostart="/etc/xdg/autostart/maximus.desktop"
@@ -77,6 +52,15 @@ fi
 # Fix for the wrong repositories in a distributed IMG
 sed -i 's/robby/jaunty/g' /etc/apt/sources.list
 
+
+# When upgrading jolicloud-tweaks (1.0.1), remove legacy configuration files
+if dpkg --compare-versions "$2" le "1.0.1"; then
+    rm -rf /etc/firefox-3.0/pref/jolicloud-firefox-3.0.js
+    rm -rf /etc/firefox-3.5/pref/jolicloud-firefox-3.5.js
+    rm -rf /etc/prism/pref/jolicloud-prism.js
+    rm -rf /etc/skel/.local/share/applications/jolicloud-favorite-firefox.desktop
+    rm -rf /etc/skel/.local/share/applications/jolicloud-favorite-my-jolicloud.desktop
+fi
 
 # When upgrading jolicloud-tweaks (1.0.0), re-apply the (new) default
 # keybinding rules for all users.
