@@ -1,3 +1,9 @@
+jolicloud-tweaks (1.0.1) robby; urgency=low
+
+  * Removed depricated firefox and prism configuration files.
+
+ -- Adam McDaniel <adam@jolicloud.org>  Thu, 22 Jul 2010 21:43:18 -0600
+
 jolicloud-tweaks (1.0.0) robby; urgency=low
 
   [ Benjamin Ryzman ]
