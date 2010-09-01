@@ -1,3 +1,9 @@
+jolicloud-tweaks (1.1.0) robby-lucid; urgency=low
+
+  * Completly remove legacy firefox config
+
+ -- Adam McDaniel <adam@jolicloud.org>  Wed, 01 Sep 2010 09:33:52 -0600
+
 jolicloud-tweaks (1.0.1) robby; urgency=low
 
   * Removed depricated firefox and prism configuration files.
