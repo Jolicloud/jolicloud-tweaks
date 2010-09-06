@@ -1,3 +1,9 @@
+jolicloud-tweaks (1.0.1+lucid) robby; urgency=low
+
+  * In Gnome 2.28, mixer is replaced by indicator applet
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Mon, 06 Sep 2010 14:21:57 +0200
+
 jolicloud-tweaks (1.0.1) robby; urgency=low
 
   * Removed depricated firefox and prism configuration files.
