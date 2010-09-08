@@ -10,6 +10,7 @@ Package: jolicloud-tweaks
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, gdm
 Recommends: jolicloud-launcher
+Conflicts: indicator-messages
 Description: Jolicloud configuration tweaks
  Scripts that tweak a bit Ubuntu to adapt it more to netbooks and to Jolicloud
 
