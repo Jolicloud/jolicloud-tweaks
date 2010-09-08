@@ -1,7 +1,18 @@
 #!/bin/bash
-# postinst script for jolicloud-tweaks
+# This script can be called in the following ways:
 #
-# see: dh_installdeb(1)
+# After the package was installed:
+#       <postinst> configure <old-version>
+#
+# If prerm fails during upgrade or fails on failed upgrade:
+#       <old-postinst> abort-upgrade <new-version>
+#
+# If prerm fails during deconfiguration of a package:
+#       <postinst> abort-deconfigure in-favour <new-package> <version>
+#                  removing <old-package> <version>
+#
+# If prerm fails during replacement due to conflict:
+#       <postinst> abort-remove in-favour <new-package> <version>
 
 set -e
 
@@ -9,86 +20,106 @@ set -e
 app_dir="/usr/share/jolicloud-tweaks"
 save_dir="$app_dir/save"
 
-# Fix the problem with evolution (uninstalled) when the computer is put on AC
-if [ -a /etc/acpi/mailbtn.sh ]; then
-	chmod -x /etc/acpi/mailbtn.sh
-fi
-
-# Remove jolicloud-tweaks earlier (redundant) fix for the shutdown problem.
-# The previous fix was not implemented correctly, resulting in an overly
-# verbose shutdown which sometimes left the system hanging.
-if [ -a /etc/default/halt ]; then
-	if [ `cat /etc/default/halt | grep -c "#Automatic fix by jolicloud-tweaks"` -ne 0 ]; then
-		sed -i 's/^.*#Automatic fix by jolicloud-tweaks$//' /etc/default/halt
-	fi
-fi
-
-# Force update of top panel setting by backing out any user customization
-old_ifs=$IFS
-IFS='
-'
-hdirs=$(awk -F: '{if ( $3 >= 1000 && $1 != "nobody" ) print $6}' < /etc/passwd)
-for d in $hdirs; do
- if [ -d "$d/.gconf/apps/panel" ] ; then
- backuproot="$d/.gconf-backups"
- if [ ! -d $backuproot ] ; then
- mkdir $backuproot
- fi
- backupdir=$(mktemp -d "$backuproot/apps.XXXXXXXXXX")
- mv "$d/.gconf/apps/panel" "$backupdir"
- fi
-done
-
-# Gconf settings
-update-gconf-defaults
-
-# Change the gdm theme
-if [ -d /etc/gdm/ ]; then
-	if [ ! -a /etc/gdm/gdm.conf-custom ]; then
-		touch /etc/gdm/gdm.conf-custom
-	fi
-	$app_dir/edit-conf /etc/gdm/gdm.conf-custom greeter BackgroundColor "#000000"
-	$app_dir/edit-conf /etc/gdm/gdm.conf-custom greeter GraphicalThemedColor "#000000"
-	$app_dir/edit-conf /etc/gdm/gdm.conf-custom greeter GraphicalTheme Jolicloud
-fi
-
-# Ubiquity icon
-if [ -e /usr/share/pixmaps/ubiquity.png ]; then
-	cp -f /usr/share/pixmaps/ubiquity.png /usr/share/jolicloud-tweaks/ubiquity.png.old
-	cp -f /usr/share/jolicloud-tweaks/ubiquity.png /usr/share/pixmaps/ubiquity.png
-fi
-
-# Remove earlier maximus autostart which is not useful anymore
-maximus_autostart="/etc/xdg/autostart/maximus.desktop"
-if [ -e "$maximus_autostart".dpkg-obsolete ]; then
-    echo "Removing obsolete conffile $maximus_autostart"
-    rm -f "$maximus_autostart".dpkg-obsolete
-fi
-
-# Fix for the wrong repositories in a distributed IMG
-sed -i 's/robby/jaunty/g' /etc/apt/sources.list
-
-
-# When upgrading jolicloud-tweaks (1.0.1), remove legacy configuration files
-if dpkg --compare-versions "$2" le "1.0.1"; then
-    rm -rf /etc/firefox-3.0/pref/jolicloud-firefox-3.0.js
-    rm -rf /etc/firefox-3.5/pref/jolicloud-firefox-3.5.js
-    rm -rf /etc/prism/pref/jolicloud-prism.js
-    rm -rf /etc/skel/.local/share/applications/jolicloud-favorite-firefox.desktop
-    rm -rf /etc/skel/.local/share/applications/jolicloud-favorite-my-jolicloud.desktop
-fi
-
-# When upgrading jolicloud-tweaks (1.0.0), re-apply the (new) default
-# keybinding rules for all users.
-if dpkg --compare-versions "$2" le "1.0.0"; then
-    for gconfdir in /home/*/.gconf; do
-        if [ -d $gconfdir ]; then
-            gconftool --direct --config-source xml::$gconfdir --load \
-                /usr/share/gconf/defaults/30_jolicloud-panel-keybindings.entries
+case "$1" in
+    configure)
+        # Fix the problem with evolution (uninstalled) when the computer is
+        # put on AC
+        if [ -a /etc/acpi/mailbtn.sh ]; then
+            chmod -x /etc/acpi/mailbtn.sh
         fi
-    done
-fi
 
+        # Remove jolicloud-tweaks earlier (redundant) fix for the shutdown
+        # problem.  The previous fix was not implemented correctly,
+        # resulting in an overly verbose shutdown which sometimes left the
+        # system hanging.
+        if [ -a /etc/default/halt ]; then
+            if [ `cat /etc/default/halt | grep -c "#Automatic fix by jolicloud-tweaks"` -ne 0 ]; then
+                sed -i 's/^.*#Automatic fix by jolicloud-tweaks$//' \
+                    /etc/default/halt
+            fi
+        fi
+
+        # Force update of top panel setting by backing out any user
+        # customization
+        old_ifs=$IFS
+        IFS='
+        '
+        hdirs=$(awk -F: '{if ( $3 >= 1000 && $1 != "nobody" ) print $6}' < /etc/passwd)
+        for d in $hdirs; do
+            if [ -d "$d/.gconf/apps/panel" ] ; then
+                backuproot="$d/.gconf-backups"
+                if [ ! -d $backuproot ] ; then
+                    mkdir $backuproot
+                fi
+                backupdir=$(mktemp -d "$backuproot/apps.XXXXXXXXXX")
+                mv "$d/.gconf/apps/panel" "$backupdir"
+            fi
+        done
+
+        # Gconf settings
+        update-gconf-defaults
+
+        # Change the gdm theme
+        if [ -d /etc/gdm/ ]; then
+            if [ ! -a /etc/gdm/gdm.conf-custom ]; then
+                touch /etc/gdm/gdm.conf-custom
+            fi
+            $app_dir/edit-conf /etc/gdm/gdm.conf-custom greeter \
+                BackgroundColor "#000000"
+            $app_dir/edit-conf /etc/gdm/gdm.conf-custom greeter \
+                GraphicalThemedColor "#000000"
+            $app_dir/edit-conf /etc/gdm/gdm.conf-custom greeter \
+                GraphicalTheme Jolicloud
+        fi
+
+        # Ubiquity icon
+        if [ -e /usr/share/pixmaps/ubiquity.png ]; then
+            cp -f /usr/share/pixmaps/ubiquity.png \
+                /usr/share/jolicloud-tweaks/ubiquity.png.old
+            cp -f /usr/share/jolicloud-tweaks/ubiquity.png \
+                /usr/share/pixmaps/ubiquity.png
+        fi
+
+        # Remove earlier maximus autostart which is not useful anymore
+        maximus_autostart="/etc/xdg/autostart/maximus.desktop"
+        if [ -e "$maximus_autostart".dpkg-obsolete ]; then
+            echo "Removing obsolete conffile $maximus_autostart"
+            rm -f "$maximus_autostart".dpkg-obsolete
+        fi
+
+        # Fix for the wrong repositories in a distributed IMG
+        sed -i 's/robby/jaunty/g' /etc/apt/sources.list
+
+        # When upgrading jolicloud-tweaks (1.0.1), remove legacy
+        # configuration files
+        if dpkg --compare-versions "$2" le "1.0.1"; then
+            rm -rf /etc/firefox-3.0/pref/jolicloud-firefox-3.0.js
+            rm -rf /etc/firefox-3.5/pref/jolicloud-firefox-3.5.js
+            rm -rf /etc/prism/pref/jolicloud-prism.js
+            rm -rf /etc/skel/.local/share/applications/jolicloud-favorite-firefox.desktop
+            rm -rf /etc/skel/.local/share/applications/jolicloud-favorite-my-jolicloud.desktop
+        fi
+
+        # When upgrading jolicloud-tweaks (1.0.0), re-apply the (new) default
+        # keybinding rules for all users.
+        if dpkg --compare-versions "$2" le "1.0.0"; then
+            for gconfdir in /home/*/.gconf; do
+                if [ -d $gconfdir ]; then
+                    gconftool --direct --config-source xml::$gconfdir --load \
+                        /usr/share/gconf/defaults/30_jolicloud-panel-keybindings.entries
+                fi
+            done
+        fi
+    ;;
+
+    abort-upgrade|abort-deconfigure|abort-remove)
+        ;;
+
+    *)
+        echo "$0 called with unknown argument \`$1\'" 1>&2
+        exit 1
+        ;;
+esac
 
 # dh_installdeb will replace this with shell code automatically
 # generated by other debhelper scripts.
