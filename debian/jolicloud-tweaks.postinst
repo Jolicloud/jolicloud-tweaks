@@ -90,6 +90,16 @@ case "$1" in
         # Fix for the wrong repositories in a distributed IMG
         sed -i 's/robby/jaunty/g' /etc/apt/sources.list
 
+        # When installing jolicloud-tweaks (1.1.3), apply a dpkg-diversion
+        # rule to prevent indicator-messages from starting. This is
+        # required because we cannot cleanly remove the indicator-message
+        # package to otherwise inhibit it.
+        if dpkg --compare-versions "$2" le "1.1.3"; then
+            dpkg-divert --package jolicloud-tweaks \
+                --divert /usr/share/jolicloud-tweaks/libmessaging.so.divert \
+                --rename /usr/lib/indicators/3/libmessaging.so
+        fi
+
         # When upgrading jolicloud-tweaks (1.0.1), remove legacy
         # configuration files
         if dpkg --compare-versions "$2" le "1.0.1"; then
