@@ -1,3 +1,10 @@
+jolicloud-tweaks (1.1.2) robby; urgency=low
+
+  * Reset the topbar settings everytime
+  * Conflict jolicloud-tweaks with indicator-messages
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Wed, 08 Sep 2010 17:22:27 +0200
+
 jolicloud-tweaks (1.1.1) robby; urgency=low
 
   [ Adam McDaniel ]
