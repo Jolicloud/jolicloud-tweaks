@@ -24,12 +24,6 @@ if [ -a /etc/gdm/gdm.conf-custom ]; then
 	$app_dir/restore-conf /etc/gdm/gdm.conf-custom
 fi
 
-# Restore Firefox settings
-if [ -a /etc/firefox-3.0/pref/ubufox.js ]; then
-	newFile=`cat /etc/firefox-3.0/pref/ubufox.js | grep -v " //Added by jolicloud-tweaks$"`
-	echo "$newFile" > /etc/firefox-3.0/pref/ubufox.js
-fi
-
 # Ubiquity icon
 if [ -e /usr/share/jolicloud-tweaks/ubiquity.png.old ]; then
         cp -f /usr/share/jolicloud-tweaks/ubiquity.png.old /usr/share/pixmaps/ubiquity.png
