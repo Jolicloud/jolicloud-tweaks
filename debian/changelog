@@ -1,3 +1,13 @@
+jolicloud-tweaks (1.1.1) robby; urgency=low
+
+  [ Adam McDaniel ]
+  * Completly remove legacy firefox config
+
+  [ Benjamin Ryzman ]
+  * In Gnome 2.28, mixer is replaced by indicator applet
+
+ -- Benjamin Ryzman <benjamin@jolicloud.org>  Wed, 08 Sep 2010 10:30:10 +0200
+
 jolicloud-tweaks (1.1.0) robby-lucid; urgency=low
 
   * Completly remove legacy firefox config
