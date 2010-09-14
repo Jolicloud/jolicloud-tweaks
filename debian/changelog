@@ -1,3 +1,10 @@
+jolicloud-tweaks (1.1.5) robby; urgency=low
+
+  * Changed gdm from 'depends' to 'enhances'
+  * Updated supports scripts to identify new gconf/defaults/* numbering
+
+ -- Adam McDaniel <adam@jolicloud.org>  Tue, 14 Sep 2010 16:19:22 -0600
+
 jolicloud-tweaks (1.1.4) robby; urgency=low
 
   * Moved the button-layout back to the right-hand side of metacity-
