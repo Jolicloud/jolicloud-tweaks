@@ -1,0 +1,11 @@
+<gconfentryfile>
+  <entrylist base="/apps/metacity/general">
+    <entry>
+      <key>button_layout</key>
+      <schema_key>/schemas/apps/metacity/general/button_layout</schema_key>
+      <value>
+        <string>:minimize,maximize,close</string>
+      </value>
+    </entry>
+  </entrylist>
+</gconfentryfile>
