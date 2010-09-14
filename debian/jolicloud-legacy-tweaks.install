@@ -1,1 +1,1 @@
-gconf/30_jolicloud-panel-legacy-settings.entries /usr/share/gconf/defaults/
+gconf-legacy/* /usr/share/gconf/defaults/
