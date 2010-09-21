@@ -72,14 +72,6 @@ case "$1" in
                 GraphicalTheme Jolicloud
         fi
 
-        # Ubiquity icon
-        if [ -e /usr/share/pixmaps/ubiquity.png ]; then
-            cp -f /usr/share/pixmaps/ubiquity.png \
-                /usr/share/jolicloud-tweaks/ubiquity.png.old
-            cp -f /usr/share/jolicloud-tweaks/ubiquity.png \
-                /usr/share/pixmaps/ubiquity.png
-        fi
-
         # Remove earlier maximus autostart which is not useful anymore
         maximus_autostart="/etc/xdg/autostart/maximus.desktop"
         if [ -e "$maximus_autostart".dpkg-obsolete ]; then

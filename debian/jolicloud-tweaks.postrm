@@ -48,11 +48,6 @@ case "$1" in
             $app_dir/restore-conf /etc/gdm/gdm.conf-custom
         fi
 
-        # Ubiquity icon
-        if [ -e /usr/share/jolicloud-tweaks/ubiquity.png.old ]; then
-                cp -f /usr/share/jolicloud-tweaks/ubiquity.png.old /usr/share/pixmaps/ubiquity.png
-        fi
-
         # Restore the original libmessaging.so applet
         dpkg-divert --remove --rename /usr/lib/indicators/3/libmessaging.so
         ;;
