@@ -1,3 +1,10 @@
+jolicloud-tweaks (1.1.6) robby; urgency=low
+
+  * Do not manipulate the ubiquity icon by hand. Let the ubiquity-
+    package set it.
+
+ -- Adam McDaniel <adam@jolicloud.org>  Tue, 21 Sep 2010 11:45:59 -0600
+
 jolicloud-tweaks (1.1.5) robby; urgency=low
 
   * Changed gdm from 'depends' to 'enhances'
