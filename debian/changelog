@@ -1,3 +1,9 @@
+jolicloud-tweaks (1.1.8) robby; urgency=low
+
+  * Bumping version.
+
+ -- Andrew Stormont <andy@jolicloud.org>  Tue, 19 Oct 2010 17:05:27 +0200
+
 jolicloud-tweaks (1.1.7) robby; urgency=low
 
   * Fix wonky description for jolicloud-tweaks package
