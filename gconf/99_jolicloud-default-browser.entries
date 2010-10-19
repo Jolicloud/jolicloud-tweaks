@@ -1,0 +1,25 @@
+<gconfentryfile>
+  <entrylist base="/desktop/gnome/url-handlers/http">
+    <entry>
+      <key>command</key>
+      <schema_key>/schemas/desktop/gnome/url-handlers/http/command</schema_key>
+      <value>
+        <string>/usr/bin/nickel-browser %s</string>
+      </value>
+    </entry>
+    <entry>
+      <key>enabled</key>
+      <schema_key>/schemas/desktop/gnome/url-handlers/http/enabled</schema_key>
+      <value>
+        <bool>true</bool>
+      </value>
+    </entry>
+    <entry>
+      <key>needs_terminal</key>
+      <schema_key>/schemas/desktop/gnome/url-handlers/http/needs_terminal</schema_key>
+      <value>
+        <bool>false</bool>
+      </value>
+    </entry>
+  </entrylist>
+</gconfentryfile>
