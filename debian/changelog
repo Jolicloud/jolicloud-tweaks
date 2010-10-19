@@ -1,3 +1,12 @@
+jolicloud-tweaks (1.1.7) robby; urgency=low
+
+  * Fix wonky description for jolicloud-tweaks package
+  * Add 99_jolicloud-default-browser.entries to make nickel the default
+    browser
+  * Set default browser in gconf to nickel if current setting is invalid
+
+ -- Andrew Stormont <andy@jolicloud.org>  Tue, 19 Oct 2010 15:50:05 +0200
+
 jolicloud-tweaks (1.1.6) robby; urgency=low
 
   * Do not manipulate the ubiquity icon by hand. Let the ubiquity-
