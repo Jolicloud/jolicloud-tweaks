@@ -1,0 +1,20 @@
+<gconfentryfile>
+    <entrylist base="/apps/gnome-session/options">
+        <entry>
+            <key>logout_prompt</key>
+            <schema_key>/schemas/apps/gnome-session/options/logout_prompt</schema_key>
+            <value>
+                <bool>false</bool>
+            </value>
+        </entry>
+    </entrylist>
+    <entrylist base="/apps/gnome-screensaver">
+        <entry>
+            <key>user_switch_enabled</key>
+            <schema_key>/schemas/apps/gnome-screensaver/user_switch_enabled</schema_key>
+            <value>
+                <bool>false</bool>
+            </value>
+        </entry>
+    </entrylist>
+</gconfentryfile>

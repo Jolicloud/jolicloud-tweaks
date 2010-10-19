@@ -123,6 +123,17 @@ case "$1" in
             fi
         done
 
+        # When upgrading jolicloud-tweaks (1.1.7), re-apply the (new) default
+        # logout policy for all users.
+        if dpkg --compare-versions "$2" lt "1.1.7"; then
+            # Apply this gconf entries file to the all gconf-enabled users on the system.
+            for gconfdir in /home/*/.gconf; do
+                if [ -d $gconfdir ]; then
+                    gconftool --direct --config-source xml::$gconfdir --load \
+                        /usr/share/gconf/defaults/99_jolicloud-gnome-session.entries
+                fi
+            done
+        fi
     ;;
 
     abort-upgrade|abort-deconfigure|abort-remove)
