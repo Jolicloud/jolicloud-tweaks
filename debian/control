@@ -12,7 +12,7 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Enhances: gdm
 Recommends: jolicloud-launcher
 Description: Jolicloud configuration tweaks
- Scripts that tweak a bit Ubuntu to adapt it more to netbooks and to Jolicloud
+ Scripts that tweak Ubuntu a bit to adapt it more to netbooks and to Jolicloud
 
 Package: jolicloud-legacy-tweaks
 Architecture: all
