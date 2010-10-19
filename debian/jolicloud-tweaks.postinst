@@ -110,6 +110,19 @@ case "$1" in
                 fi
             done
         fi
+
+        # Make sure all users have a valid browser set in gconf
+        for gconfdir in /home/*/.gconf; do
+            if [ -d $gconfdir ]; then
+                current_browser=`gconftool --direct --config-source xml::$gconfdir \
+                                     --get /desktop/gnome/url-handlers/http/command | sed 's/ %.//g'`
+		if [ ! -e "$current_browser" -a -e /usr/bin/nickel-browser ]; then
+                    gconftool --direct --config-source xml::$gconfdir --load \
+                        /usr/share/gconf/defaults/99_jolicloud-default-browser.entries
+                fi
+            fi
+        done
+
     ;;
 
     abort-upgrade|abort-deconfigure|abort-remove)
