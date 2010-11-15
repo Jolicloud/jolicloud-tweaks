@@ -81,5 +81,20 @@ fi
 gconftool -s /apps/nautilus/preferences/show_desktop --type bool false
 
 
+#
+# User Tweak #4
+#
+# Not really a user-tweak, but a network-manager fix. If the hardware does
+# not resume correctly after suspending/hibernating, network-manager
+# remains in a "sleep" state. This requires the user to manually enable
+# networking. Instead, JUT identifies if we're in a sleep state ("uint32
+# 1") when logging in and automatically executes the dbus wake() method.
+#
+
+DBUS_SEND="dbus-send --print-reply --system --dest=org.freedesktop.NetworkManager /org/freedesktop/NetworkManager"
+if `$DBUS_SEND org.freedesktop.NetworkManager.state | grep -q 'uint32 1'`; then
+    $DBUS_SEND org.freedesktop.NetworkManager.wake > /dev/null
+fi
+
 
 exit 0
