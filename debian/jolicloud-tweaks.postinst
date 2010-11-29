@@ -134,6 +134,10 @@ case "$1" in
                 fi
             done
         fi
+
+        if ! `dpkg-divert --list /usr/lib/pm-utils/sleep.d/55NetworkManager | grep -q jolicloud-tweaks`; then
+            dpkg-divert --package jolicloud-tweaks --divert /usr/lib/pm-utils/55NetworkManager.jolicloud-tweaks.diverted --rename /usr/lib/pm-utils/sleep.d/55NetworkManager
+        fi
     ;;
 
     abort-upgrade|abort-deconfigure|abort-remove)

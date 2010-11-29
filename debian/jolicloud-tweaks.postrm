@@ -49,6 +49,10 @@ case "$1" in
 
         # Restore the original libmessaging.so applet
         dpkg-divert --remove --rename /usr/lib/indicators/3/libmessaging.so
+
+        if `dpkg-divert --list /usr/lib/pm-utils/sleep.d/55NetworkManager | grep -q jolicloud-tweaks`; then
+            dpkg-divert --package jolicloud-tweaks --remove /usr/lib/pm-utils/sleep.d/55NetworkManager
+        fi
         ;;
 
     purge)
