@@ -1,3 +1,22 @@
+jolicloud-tweaks (1.1.11) robby; urgency=low
+
+  * Reprofile "legacy-tweaks" gnome panel default applets to lucid for
+    Jolicloud 1.1
+  * Converted jolicloud-legacy-postinst,postrm structure to follow dpkg
+    action parameters
+  * Corrected logic to dynamically refresh the gnome-panel
+    configuration.
+  * Create a dpkg-divert rule to move /usr/lib/pm-
+    utils/sleep.d/55NetworkManager out of the way. This inhibits the
+    sleep/wake modes in network-manager during suspend/resume which
+    provides a faster network connection at resume, and fixes other
+    problems if the resume attempt fails and the device needs to cold-
+    boot.
+  * Remove code for User Tweak #4: Auto-wake Network-Manager, made
+    unnecessary by dpkg-divert of 55NetworkManager
+
+ -- Adam McDaniel <adam@jolicloud.org>  Tue, 30 Nov 2010 07:22:15 +0100
+
 jolicloud-tweaks (1.1.10) robby; urgency=low
 
   * If the hardware does not resume correctly after
