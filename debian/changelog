@@ -1,3 +1,10 @@
+jolicloud-tweaks (1.1.12) robby; urgency=low
+
+  * Delete the useless firefox profile symlink that prevent firefox to
+    start after upgrading from 1.0 to 1.1
+
+ -- Jérémy Bethmont <jerem@jolicloud.org>  Thu, 16 Dec 2010 16:12:32 +0100
+
 jolicloud-tweaks (1.1.11) robby; urgency=low
 
   * Reprofile "legacy-tweaks" gnome panel default applets to lucid for
