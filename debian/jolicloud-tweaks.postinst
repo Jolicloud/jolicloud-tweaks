@@ -138,6 +138,16 @@ case "$1" in
         if ! `dpkg-divert --list /usr/lib/pm-utils/sleep.d/55NetworkManager | grep -q jolicloud-tweaks`; then
             dpkg-divert --package jolicloud-tweaks --divert /usr/lib/pm-utils/55NetworkManager.jolicloud-tweaks.diverted --rename /usr/lib/pm-utils/sleep.d/55NetworkManager
         fi
+        
+        # Delete the useless firefox profile symlink that prevent firefox to start after upgrading from 1.0 to 1.1
+        for moz_dir in /home/*/.mozilla; do
+            if [ -L "$moz_dir/firefox" -a "`readlink $moz_dir/firefox`" == "$moz_dir/firefox-3.6" ]; then
+                rm $moz_dir/firefox
+                if [ -d "$moz_dir/firefox-3.6.abandoned" ]; then
+                    mv $moz_dir/firefox-3.6.abandoned $moz_dir/firefox-3.6
+                fi
+            fi
+        done
     ;;
 
     abort-upgrade|abort-deconfigure|abort-remove)
