@@ -1,0 +1,3 @@
+/apps/gnome-screensaver/mode "blank-only"
+/apps/gnome-screensaver/themes []
+/apps/gnome-screensaver/power_management_delay 10
