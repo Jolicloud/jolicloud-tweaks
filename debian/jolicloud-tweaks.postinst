@@ -148,6 +148,44 @@ case "$1" in
                 fi
             fi
         done
+        
+        # Migrate NetworkManager current user connections to system connections
+        if dpkg --compare-versions "$2" eq "1.2"; then
+            python << EOF || true
+import dbus
+from twisted.internet import glib2reactor
+glib2reactor.install()
+from dbus.mainloop.glib import DBusGMainLoop
+DBusGMainLoop(set_as_default=True)
+from twisted.internet import reactor
+
+def migrate_user_to_system_connections():
+	try:
+		bus = dbus.SystemBus()
+		user_settings = bus.get_object('org.freedesktop.NetworkManagerUserSettings', '/org/freedesktop/NetworkManagerSettings')
+		system_settings = bus.get_object('org.freedesktop.NetworkManagerSystemSettings', '/org/freedesktop/NetworkManagerSettings')
+		for user_connection in user_settings.ListConnections(dbus_interface='org.freedesktop.NetworkManagerSettings'):
+			connection = bus.get_object('org.freedesktop.NetworkManagerUserSettings', user_connection)
+			settings = connection.GetSettings(dbus_interface='org.freedesktop.NetworkManagerSettings.Connection')
+			if settings.has_key('802-11-wireless') and settings['802-11-wireless'].has_key('security'):
+				secrets = connection.GetSecrets(
+					settings['802-11-wireless']['security'],
+					[],
+					False,
+					dbus_interface='org.freedesktop.NetworkManagerSettings.Connection.Secrets'
+				)
+				for key in secrets['802-11-wireless-security']:
+					settings['802-11-wireless-security'][key] = secrets['802-11-wireless-security'][key]
+			system_settings.AddConnection(settings, dbus_interface='org.freedesktop.NetworkManagerSettings')
+			connection.Delete(dbus_interface='org.freedesktop.NetworkManagerSettings.Connection')
+		reactor.stop()
+	except Exception:
+		reactor.stop()
+
+reactor.callLater(0, migrate_user_to_system_connections)
+reactor.run()
+EOF
+        fi
     ;;
 
     abort-upgrade|abort-deconfigure|abort-remove)
