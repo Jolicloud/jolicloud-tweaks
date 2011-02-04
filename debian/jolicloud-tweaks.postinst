@@ -150,7 +150,8 @@ case "$1" in
         done
         
         # Migrate NetworkManager current user connections to system connections
-        if dpkg --compare-versions "$2" eq "1.2"; then
+        
+        if dpkg --compare-versions "$2" lt-nl "1.2"; then
             python << EOF || true
 import dbus
 from twisted.internet import glib2reactor
