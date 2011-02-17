@@ -1,3 +1,11 @@
+jolicloud-tweaks (1.2.1) robby; urgency=low
+
+  * Fixed /apps/gnome-power-manager/backlight.
+  * Removed "NetworkManager connection migrations" (integrated into
+    jolicloud-guestlogin instead)
+
+ -- Jérémy Bethmont <jerem@jolicloud.org>  Thu, 17 Feb 2011 17:22:37 +0100
+
 jolicloud-tweaks (1.2) robby; urgency=low
 
   * Added NetworkManager connection migrations
