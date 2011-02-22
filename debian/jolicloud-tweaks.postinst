@@ -148,6 +148,31 @@ case "$1" in
                 fi
             fi
         done
+
+        
+
+        # This hack removes the Jolicloud-provided flashplugin-installer
+        # and flashplugin-nonfree packages. These packages have an elevated
+        # epoch in their revision, making rebasing on Ubuntu's upstream
+        # packages nearly impossible. Since Jolicloud is no longer
+        # interested in maintaining these packages for the 1.2 upgrade, if
+        # they are installed, force the system to install the "downgraded"
+        # upsream version.
+
+        # Identify the current version of the flashplugin-installer installed
+        thisVer=$(dpkg-query -W --showformat '${Version}' flashplugin-installer 2>/dev/null)
+        # Identify the desired/ubuntu version of the flashplugin-installer
+        # available
+        goodVer=$(apt-cache policy flashplugin-installer | perl -ne 'if(/^\W{5}(\S*ubuntu\S*)/){print"$1\n";last}')
+
+        # Check if the installed flashplugin package is later than 1:10,
+        # which is when Jolicloud began customizing this package.
+        if dpkg --compare-versions "$thisVer" gt "1:10"; then
+            # Force the downgrade to the good "ubuntu" version
+            echo "Queueing the installation of Ubuntu's flashplugin packages"
+            apt-queue "apt-get install -y --force-yes \"flashplugin-installer=$goodVer\" \"flashplugin-nonfree=$goodVer\""
+        fi
+
         ;;
 
     abort-upgrade|abort-deconfigure|abort-remove)
