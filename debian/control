@@ -10,7 +10,8 @@ Vcs-Browser: https://github.com/jolicloud/jolicloud-tweaks
 
 Package: jolicloud-tweaks
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, apt-queue
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: apt-queue (>> 0.2.3)
 Enhances: gdm
 Recommends: jolicloud-launcher
 Description: Jolicloud configuration tweaks
