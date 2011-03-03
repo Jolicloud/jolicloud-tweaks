@@ -1,15 +1,3 @@
-jolicloud-tweaks (1.2.5) robby-1.2; urgency=low
-
-  * Fixed: Deactivate nautilus media autorun.
-
- -- Jérémy Bethmont <jerem@jolicloud.org>  Thu, 03 Mar 2011 14:19:06 +0100
-
-jolicloud-tweaks (1.2.4) robby-1.2; urgency=low
-
-  * Fixed apt-queue pre-depends
-
- -- Jérémy Bethmont <jerem@jolicloud.org>  Thu, 03 Mar 2011 14:00:01 +0100
-
 jolicloud-tweaks (1.2.3) robby-1.2; urgency=low
 
   [ Adam McDaniel ]
@@ -18,6 +6,7 @@ jolicloud-tweaks (1.2.3) robby-1.2; urgency=low
 
   [ Jérémy Bethmont ]
   * Deactivated nautilus media autorun.
+  * Fixed apt-queue pre-depends
 
  -- Jérémy Bethmont <jerem@jolicloud.org>  Thu, 03 Mar 2011 13:00:47 +0100
 
