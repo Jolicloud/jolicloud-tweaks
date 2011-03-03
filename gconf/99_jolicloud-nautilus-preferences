@@ -1,4 +1,4 @@
 /apps/nautilus/preferences/media_automount_open false
-/apps/nautilus/preferences/media_autorun_x_content_ignore [x-content/software, x-content/image-dcf, x-content/audio-player]
+/apps/nautilus/preferences/media_autorun_x_content_ignore [x-content/software,x-content/image-dcf,x-content/audio-player]
 /apps/nautilus/preferences/media_autorun_x_content_open_folder []
 /apps/nautilus/preferences/media_autorun_x_content_start_app []
