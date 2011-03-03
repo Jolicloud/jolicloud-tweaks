@@ -1,3 +1,14 @@
+jolicloud-tweaks (1.2.3) robby-1.2; urgency=low
+
+  [ Adam McDaniel ]
+  * Set "Pre-Depends: apt-queue (>> 0.2.3)" to satisify upgrading
+    requirements on new apt-queue for the flash plugin
+
+  [ Jérémy Bethmont ]
+  * Deactivated nautilus media autorun.
+
+ -- Jérémy Bethmont <jerem@jolicloud.org>  Thu, 03 Mar 2011 13:00:47 +0100
+
 jolicloud-tweaks (1.2.2) robby-1.2; urgency=low
 
   * Renamed the nautilus preferences file to match its internal
